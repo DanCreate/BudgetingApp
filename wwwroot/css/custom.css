@@ -1,0 +1,23 @@
+﻿#reorder tr {
+
+    cursor: move;
+
+}
+
+.container-total {
+
+    display:flex;
+    justify-content: space-around;
+    font-size: 26px;
+    text-align:center;
+}
+
+.activ{
+
+    color:blue
+}
+
+.passiv {
+    color: red
+}
+

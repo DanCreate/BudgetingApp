@@ -1,0 +1,26 @@
+﻿
+.accordion-item {
+    color: black !important;
+    font-size: 20px;
+}
+
+
+    .accordion-item button > span {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .accordion-item ul li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .accordion-item .accordion-collapse {
+        font-size: 18px;
+    }
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    font-style: italic;
+}

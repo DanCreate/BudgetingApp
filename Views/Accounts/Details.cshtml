@@ -1,0 +1,14 @@
+﻿@model TransactionsReport
+
+@{
+
+    ViewData["Title"] = "Transaction History";
+}
+
+
+
+<h1>Transactions @ViewBag.Account</h1>
+
+
+
+<partial name = "_TransactionReport" model="Model"/>

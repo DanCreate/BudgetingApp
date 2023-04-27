@@ -1,0 +1,38 @@
+﻿@model AccountOrderType
+
+
+@{
+    ViewData["Title"] = "Create Account Type";
+}
+
+<h1>Create account type</h1>
+<h5>Account type refers to the order account will be grouped by. (Credit Card,
+    Debit Card, Loans).</h5>
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+
+
+    </div>
+
+    <form asp-controller="AccountOrderType" asp-action="Create">
+
+        <div class="mb-3">
+
+            <label asp-for="Name" class="form-label"></label>
+            <input type="text" id="Name" asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+        <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+
+
+
+
+    </form>
+
+    @section Scripts{
+    
+    <partial name = "_ValidationScriptsPartial"/>
+    }

@@ -1,0 +1,92 @@
+﻿@model UpdateTransactionModel
+
+
+@{
+    ViewData["Title"] = "Edit Transaction";
+    var linkCancel = Model.UrlReturn ?? Url.Action("Index");
+}
+<h1>Edit Transaction</h1>
+<h5>Please update transaction</h5>
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="UrlReturn" />
+    <input type="hidden" asp-for="PreviousAmount" />
+    <input type="hidden" asp-for="PreviousAccountId" />
+
+    <div class="mb-3">
+        <label asp-for="TransactionDate" class="form-label"></label>
+        <input asp-for="TransactionDate" class="form-control" />
+        <span asp-validation-for="TransactionDate" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="AccountID" class="form-label"></label>
+        <select asp-for="AccountID" asp-items="@Model.Accounts" class="form-select"></select>
+        <span asp-validation-for="AccountID" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="OperationTypeID" class="form-label"></label>
+        <select asp-for="OperationTypeID" asp-items="Html.GetEnumSelectList<OperationType>()" class="form-select"></select>
+        <span asp-validation-for="OperationTypeID" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="CategoryID" class="form-label"></label>
+        <select asp-for="CategoryID" asp-items="@Model.Categories" class="form-select"></select>
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="Amount" class="form-label"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+
+
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="Memo" class="form-label"></label>
+        <textarea asp-for="Memo" class="form-control"></textarea>
+        <span asp-validation-for="Memo" class="text-danger"></span>
+
+
+
+    </div>
+
+    <button class="btn btn-primary">Update</button>
+    <button class="btn btn-danger" asp-action="Delete">Delete</button>
+    <a class="btn btn-secondary" href="@linkCancel">Cancel</a>
+</form>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/transactionsfom.js" asp-append-version="true"></script>
+
+    <script>
+        const urlGetCategories = '@Url.Action("GetCategories")';
+
+        $(function () {
+            initializeFormTransactions(urlGetCategories);
+
+        })
+
+    </script>
+    }
