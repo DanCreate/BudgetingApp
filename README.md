@@ -1,5 +1,5 @@
 # BudgetingApp in C with SQL Server #
-This is a web app to track expenses, it lets registration via email and password. Expenses can be tracked via categories with the respective account type. It stores the data using SQL Server.
+This is a web app to track expenses, it lets registration via email and password. Expenses can be tracked via categories with the respective account type. It stores the data using SQL Server. This project was part of an Udemy course on mastering .Net Core. 
 
 ## Login Module  
   
